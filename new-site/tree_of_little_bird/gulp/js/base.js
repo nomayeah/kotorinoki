@@ -7,7 +7,10 @@ $('#main-submit').on('click',function(){
   $('#action-area').toggleClass('dn');
 });
 
-
+var swiper = new Swiper('.swiper-container', {
+    autoplay: 2500,
+    autoplayDisableOnInteraction: false
+});
 
 $('.tub-content li').addClass('dn');
 $('.tub-content li:first-child').removeClass('dn');

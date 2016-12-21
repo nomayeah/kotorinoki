@@ -130,7 +130,7 @@ section h3 + p { font-size: 26px; padding: 0 15px; }
 
 section#top-caption { position: relative; }
 
-section#top-caption h2 { width: 600px; height: 150px; text-align: left; color: #fff; background-color: rgba(0, 0, 0, 0.2); font-size: 30px; padding: 10px; position: absolute; top: 0; bottom: 0; left: 30px; margin: auto; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
+section#top-caption h2 { width: 600px; height: 150px; text-align: left; color: #fff; background-color: rgba(0, 0, 0, 0.2); font-size: 30px; padding: 10px; position: absolute; top: 0; bottom: 0; left: 30px; margin: auto; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; z-index: 10; }
 
 section#section-01 { text-align: center; }
 
