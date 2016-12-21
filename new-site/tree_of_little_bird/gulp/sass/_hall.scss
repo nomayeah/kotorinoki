@@ -6,6 +6,14 @@
   }
 }
 
+.tub-area {display: flex;justify-content: space-between;
+	> div:first-child {width: 70%;padding-right: 10px;}
+	> div:last-child {flex: 1;padding-left: 10px;}
+	h2 {display: block;}
+}
+
+
+
 /* swipe設定ここから */
 .gallery-thumbs {height: 20%;box-sizing: border-box;padding: 10px 0;}
 .gallery-thumbs .swiper-slide {width: 25%;height: 100%;opacity: 0.4;}
