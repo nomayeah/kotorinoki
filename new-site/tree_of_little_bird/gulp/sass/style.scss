@@ -96,7 +96,7 @@ section {
 }
 
 section#top-caption {position: relative;
-  h2 {width: 600px;height: 150px;text-align: left;color: #fff;background-color: rgba(0, 0, 0, 0.2);font-size: 30px;padding: 10px;position: absolute;top: 0;bottom: 0;left: 30px;margin: auto;display: flex;align-items: center;}
+  h2 {width: 600px;height: 150px;text-align: left;color: #fff;background-color: rgba(0, 0, 0, 0.2);font-size: 30px;padding: 10px;position: absolute;top: 0;bottom: 0;left: 30px;margin: auto;display: flex;align-items: center;z-index: 10;}
 }
 
 section#section-01 {text-align: center;
