@@ -1,0 +1,36 @@
+@keyframes showMobileMenu {
+  0% {
+    opacity: 0;
+    transform: translate(0, -60px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0px);
+  }
+}
+
+.mobile-menu {
+  font-family: $font-family-serif;
+  display: none;
+  position: fixed;
+  z-index: 100;
+  top: $_header-tablet-height;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: $color-ivory;
+  opacity: 0;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  overflow-y: scroll;
+  &.is-open {
+    display: block;
+    animation: showMobileMenu 500ms ease-in-out 0s forwards;
+  }
+}
+
+html, body {
+  &.open-mobile-menu {
+    overflow-y: hidden;
+  }
+}
