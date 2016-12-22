@@ -11,10 +11,10 @@
       <li>
       <!-- <a href="<?php the_permalink(); ?>"> -->
         <h2><?php the_title(); ?></h2>
-        <div class="blog-date"><?php echo get_the_date(); ?></div>
+        <div class="blog-date"><?php echo get_the_date(); ?><?php the_category(', '); ?></div>
         <div class="blog-thumbnail">
           <?php if(has_post_thumbnail()) : ?>
-            <?php the_post_thumbnail(array(100, 100)); ?>
+            <?php the_post_thumbnail(); ?>
           <?php else: ?>
             <img src="<?php echo get_template_directory_uri(); ?>/img/no_img.png">
           <?php endif; ?>
@@ -37,6 +37,10 @@
       endif;
     ?>
     </ul>
+    <div class="pagination">
+      <div class="prev"><?php previous_posts_link(); ?></div>
+      <div class="next"><?php next_posts_link(); ?></div>
+    </div>
 
   </div>
 </main>

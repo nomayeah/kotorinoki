@@ -6,12 +6,25 @@
   .pc-view iframe,.sp-view iframe {display: none;}
 
   header {
-    h1 {padding: 0 20px 20px;}
+    h1 {padding: 20px;z-index: 200;position: relative;
+      &.fixed {position: fixed;z-index: 200;width: 100%;background-color: #f9eedd;}
+    }
     #main-submit {top: 86px;right: 20px;width: 160px;
       a {padding: 8px 0;font-size: 18px;}
     }
+    .pc-view,.top-nav {display: none;}
   }
-  div#menu-btn {display: block;}
+  div#menu-btn {display: block;
+    &.active{position: fixed;}
+  }
+  #main-nav {flex-wrap: wrap;padding: 0;
+    li {width: 100%;text-align: left;
+      a {justify-content: flex-start;}
+    }
+  }
+
+  nav.sp-view {padding: 105px 10% 10%;position: fixed;width: 100%;top: 0;right: 0;z-index: 100;background-color: #f9eedd;display: none;overflow-y: scroll;}
+
 
   section {
     h2 {padding: 20px 0;font-size: 28px;}

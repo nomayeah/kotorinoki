@@ -50,7 +50,7 @@ header {background-color: #f9eedd;position: relative;
   }
 }
 
-div#menu-btn {width: 80px;height: 80px;position: absolute;top: 10px;right: 10px;background-color: #fff;display: none;}
+div#menu-btn {width: 80px;height: 80px;position: absolute;top: 10px;right: 10px;background-color: #fff;display: none;z-index: 300;}
 
 
 .current-menu-item {font-size: 20px;

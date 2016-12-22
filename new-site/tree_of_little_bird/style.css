@@ -76,7 +76,7 @@ header #action-area ul { width: 240px; padding: 10px; display: -webkit-box; disp
 
 header #action-area ul:after { content: ""; display: block; width: 20px; height: 20px; background-color: #ffffff; -webkit-transform: rotate(45deg); transform: rotate(45deg); position: absolute; top: -9px; right: 25%; }
 
-div#menu-btn { width: 80px; height: 80px; position: absolute; top: 10px; right: 10px; background-color: #fff; display: none; }
+div#menu-btn { width: 80px; height: 80px; position: absolute; top: 10px; right: 10px; background-color: #fff; display: none; z-index: 300; }
 
 .current-menu-item { font-size: 20px; }
 
@@ -207,25 +207,29 @@ section#section-04 .caption a { display: block; text-decoration: none; font-size
 
 .gallery-thumbs .swiper-slide-active { opacity: 1; }
 
+.blog { width: 800px; margin: 0 auto; }
+
 .blog li { padding: 10px; }
 
 .blog a { display: block; overflow: hidden; background-color: #afdfdf; padding: 10px; }
 
-.blog .blog-thumbnail { width: 20%; float: left; }
-
 .blog .blog-thumbnail img { width: 100%; height: auto; }
-
-.blog-txt { width: 78%; float: right; }
 
 .price { display: -webkit-box; display: -ms-flexbox; display: flex; -ms-flex-pack: distribute; justify-content: space-around; }
 
 .price li { width: 50%; border-bottom: 1px solid; margin-bottom: 30px; }
+
+.price li.active { background-color: #f3f1ea; }
 
 .price dl { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; text-align: left; padding-left: 25%; }
 
 .price dl dt { width: 30%; }
 
 .price dl dd { width: 45%; }
+
+.price-notice span { display: none; }
+
+.price-notice span.active { display: inline-block; }
 
 table { width: 100%; }
 
@@ -262,10 +266,17 @@ table tr.space td { padding-bottom: 20px; }
 /* tablet width 1200px 内の場合 */
 @media screen and (max-width: 1200px) { .tablet-view iframe { display: block; }
   .pc-view iframe, .sp-view iframe { display: none; }
-  header h1 { padding: 0 20px 20px; }
+  header h1 { padding: 20px; z-index: 200; position: relative; }
+  header h1.fixed { position: fixed; z-index: 200; width: 100%; background-color: #f9eedd; }
   header #main-submit { top: 86px; right: 20px; width: 160px; }
   header #main-submit a { padding: 8px 0; font-size: 18px; }
+  header .pc-view, header .top-nav { display: none; }
   div#menu-btn { display: block; }
+  div#menu-btn.active { position: fixed; }
+  #main-nav { -ms-flex-wrap: wrap; flex-wrap: wrap; padding: 0; }
+  #main-nav li { width: 100%; text-align: left; }
+  #main-nav li a { -webkit-box-pack: start; -ms-flex-pack: start; justify-content: flex-start; }
+  nav.sp-view { padding: 105px 10% 10%; position: fixed; width: 100%; top: 0; right: 0; z-index: 100; background-color: #f9eedd; display: none; overflow-y: scroll; }
   section h2 { padding: 20px 0; font-size: 28px; }
   section h3 { font-size: 20px; padding: 0; margin: 10px 0; }
   section h3 + p { font-size: 16px; padding: 0; }
@@ -281,9 +292,16 @@ table tr.space td { padding-bottom: 20px; }
 @media screen and (max-width: 768px) { .fb-top-sp, .sp-view iframe { display: block; text-align: center; }
   .fb-top-pc, .pc-view iframe, .tablet-view iframe { display: none; }
   header h1 { padding: 0 20px 20px; }
+  header h1.fixed { position: fixed; z-index: 200; width: 100%; background-color: #f9eedd; }
   header #main-submit { top: 86px; right: 20px; width: 160px; }
   header #main-submit a { padding: 8px 0; font-size: 18px; }
+  header .pc-view, header .top-nav { display: none; }
   div#menu-btn { display: block; }
+  div#menu-btn.active { position: fixed; }
+  #main-nav { -ms-flex-wrap: wrap; flex-wrap: wrap; padding: 0; }
+  #main-nav li { width: 100%; text-align: left; }
+  #main-nav li a { -webkit-box-pack: start; -ms-flex-pack: start; justify-content: flex-start; }
+  nav.sp-view { padding: 105px 10% 10%; position: fixed; width: 100%; top: 0; right: 0; z-index: 100; background-color: #f9eedd; display: none; overflow-y: scroll; }
   section h2 { padding: 20px 0; font-size: 28px; }
   section h3 { font-size: 20px; padding: 0; margin: 10px 0; }
   section h3 + p { font-size: 16px; padding: 0; }

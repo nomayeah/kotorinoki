@@ -24,7 +24,7 @@ Template Name: page-top
 <script>(function(d, s, id) {var js, fjs = d.getElementsByTagName(s)[0];if (d.getElementById(id)) return;js = d.createElement(s); js.id = id;js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.8&appId=355512168146901";fjs.parentNode.insertBefore(js, fjs);}(document, 'script', 'facebook-jssdk'));</script>
 
 <header>
-<div class="lang-area">
+<div class="lang-area pc-view">
 <div class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Dropdown <b class="caret"></b></a>
   <?php echo qtranxf_generateLanguageSelectCode('text'); ?>
@@ -33,21 +33,9 @@ Template Name: page-top
 
 <h1><a href="<?php echo home_url('/'); ?>"><img src="<?php bloginfo('template_directory'); ?>/img/logosample.png" alt=""></a></h1>
 
-<div id="main-submit">予約する</div>
-<div id="action-area" class="dn">
-  <div class="action-title">ご予約について</div>
-  <div class="action-text">ご予約はお電話、メール、じゃらん、楽天トラベルより受け付けております。<br>以下のリンクよりご予約ください。</div>
-  <ul>
-  <li><a href="#">楽天</a></li>
-  <li><a href="#">じゃらん</a></li>
-  </ul>
-</div>
+<?php $page_id = 408; $content = get_page($page_id); echo $content->post_content; ?>
 
-<?php
-$page_id = 26;
-$content = get_page($page_id);
-echo $content->post_content;
-?>
+<?php $page_id = 26; $content = get_page($page_id); echo $content->post_content; ?>
 
 <nav class="top-nav">
 <?php wp_nav_menu( array(
@@ -58,7 +46,19 @@ echo $content->post_content;
 ?>
 </nav>
 
-<div id="menu-btn"><span></span></div>
+<div id="menu-btn" class="none"><span></span></div>
+<nav class="sp-view">
+  <?php $page_id = 415; $content = get_page($page_id); echo $content->post_content; ?>
+  <nav class="sp-nav">
+  <?php wp_nav_menu( array(
+  'theme_location'  =>'mainmenu',
+  'container'       =>'',
+  'menu_class'      =>'',
+  'items_wrap'      =>'<ul id="main-nav">%3$s</ul>'));
+  ?>
+  </nav>
+  <?php echo qtranxf_generateLanguageSelectCode('text'); ?>
+</div>
 
 </header>
 
