@@ -1,0 +1,31 @@
+.is-right {
+  float: right;
+}
+.is-left {
+  float: left;
+}
+
+.serif {
+  font-family: $font-family-serif!important;
+}
+
+.sans-serif {
+  font-family: $font-family-sans-serif!important;
+}
+
+.flex {
+  display: flex;
+  &-center {
+    align-items: center;
+  }
+}
+
+.desktop-view {
+  display: none;
+}
+
+@include breakpoint(desktop) {
+  .desktop-view {
+    display: block;
+  }
+}
