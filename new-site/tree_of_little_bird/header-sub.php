@@ -43,13 +43,15 @@ $content = get_page($page_id);
 echo $content->post_content;
 ?>
 
-<nav>
-  <?php wp_nav_menu( array(
-    'theme_location'  =>'mainmenu',
-    'container'       =>'',
-    'menu_class'      =>'',
-    'items_wrap'      =>'<ul id="main-nav">%3$s</ul>'));
-  ?>
+<nav class="navigation tablet-view">
+  <div class="container">
+    <?php wp_nav_menu( array(
+      'theme_location'  =>'mainmenu',
+      'container'       =>'',
+      'menu_class'      =>'',
+      'items_wrap'      =>'<ul id="main-nav">%3$s</ul>'));
+    ?>
+  </div>
 </nav>
 
 <div id="menu-btn"><span></span></div>
